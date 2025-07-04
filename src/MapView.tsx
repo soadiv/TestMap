@@ -4,7 +4,7 @@ import type { MapLayerMouseEvent, MapGeoJSONFeature } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 const mapTilerStyle = 'https://api.maptiler.com/maps/streets/style.json?key=TwkH4bIhwiWu3jAEikEb';
-const geojsonUrl = '/ur.geojson';
+const geojsonUrl = './ur.geojson';
 
 // Модальное окно с отдельной картой района
 function DistrictModal({ feature, onClose }: { feature: any, onClose: () => void }) {
