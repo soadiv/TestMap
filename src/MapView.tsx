@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl, { Map, Popup } from 'maplibre-gl';
-import type { MapLayerMouseEvent } from 'maplibre-gl';
+import type { MapLayerMouseEvent, MapGeoJSONFeature } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-const geojsonUrl = '/ur.geojson';
 const mapTilerStyle = 'https://api.maptiler.com/maps/streets/style.json?key=TwkH4bIhwiWu3jAEikEb';
+const geojsonUrl = '/ur.geojson';
 
 // Модальное окно с отдельной картой района
 function DistrictModal({ feature, onClose }: { feature: any, onClose: () => void }) {
@@ -67,7 +67,7 @@ const MapView = () => {
   const mapRef = useRef<Map | null>(null);
   const hoveredStateId = useRef<number | null>(null);
   const popupRef = useRef<Popup | null>(null);
-  const [districtFeature, setDistrictFeature] = useState<any>(null);
+  const [districtFeature, setDistrictFeature] = useState<MapGeoJSONFeature | null>(null);
   const geojsonData = useRef<any>(null);
 
   useEffect(() => {
